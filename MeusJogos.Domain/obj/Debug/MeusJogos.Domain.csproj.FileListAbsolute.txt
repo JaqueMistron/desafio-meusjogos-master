@@ -1,0 +1,6 @@
+D:\Workspace\Git\MeusJogos\MeusJogos.Domain\bin\Debug\MeusJogos.Domain.dll
+D:\Workspace\Git\MeusJogos\MeusJogos.Domain\bin\Debug\MeusJogos.Domain.pdb
+D:\Workspace\Git\MeusJogos\MeusJogos.Domain\obj\Debug\MeusJogos.Domain.csproj.CoreCompileInputs.cache
+D:\Workspace\Git\MeusJogos\MeusJogos.Domain\obj\Debug\MeusJogos.Domain.dll
+D:\Workspace\Git\MeusJogos\MeusJogos.Domain\obj\Debug\MeusJogos.Domain.pdb
+D:\Workspace\Git\MeusJogos\MeusJogos.Domain\obj\Debug\MeusJogos.Domain.csprojResolveAssemblyReference.cache

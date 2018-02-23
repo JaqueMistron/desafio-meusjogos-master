@@ -1,0 +1,84 @@
+﻿@model MeusJogos.Models.JogoAmigoViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var jogosDisponiveis = ((IEnumerable<SelectListItem>)ViewBag.DropDownJogos).Any();
+    var amigosCadastrados = ((IEnumerable<SelectListItem>)ViewBag.DropDownAmigos).Any();
+}
+
+<h2>Emprestar jogo</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+                        <div class="form-group">
+                @Html.LabelFor(model => model.IdJogo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @if (jogosDisponiveis)
+                {
+                        @Html.DropDownListFor(x => x.IdJogo, (IEnumerable<SelectListItem>)ViewBag.DropDownJogos, new { @class = "form-control" })
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning col-sm-10">
+                            Não há jogos disponíveis para emprestar.
+                        </div>
+                    }
+                    @Html.ValidationMessageFor(model => model.IdJogo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            @Html.LabelFor(model => model.IdAmigo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @if (amigosCadastrados)
+                {
+                    @Html.DropDownListFor(x => x.IdAmigo, (IEnumerable<SelectListItem>)ViewBag.DropDownAmigos, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.IdAmigo, "", new { @class = "text-danger" })
+                }
+                else
+                {
+                    <div class="alert alert-warning col-sm-10">
+                        Não há amigos cadastrados.
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataRetirada, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DataRetirada, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DataRetirada, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataDevolucao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DataDevolucao, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DataDevolucao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Criar empréstimo" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

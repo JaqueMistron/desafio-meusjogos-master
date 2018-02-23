@@ -1,0 +1,50 @@
+﻿@model MeusJogos.Models.AmigoViewModel
+
+@{
+    ViewBag.Title = "_modalDetalharJogoAmigo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="modal fade" id="modalJogosComAmigo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel">Jogos emprestados para @Model.Nome</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Título do jogo</th>
+                            <th scope="col">Versão</th>
+                            <th scope="col">Data da retirada</th>
+                            <th scope="col">Data da devolução</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var emprestimo in Model.ListaJogosEmprestados)
+                        {
+                            <tr>
+                                <td>@emprestimo.Jogo.Titulo</td>
+                                <td>@emprestimo.Jogo.Versao</td>
+                                <td>@emprestimo.DataRetirada.ToShortDateString()</td>
+                                @if (emprestimo.DataDevolucao.HasValue)
+                                {
+                                    <td>@emprestimo.DataDevolucao.Value.ToShortDateString()</td>
+                                }
+                                else
+                                {
+                                    <td>A devolver</td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+

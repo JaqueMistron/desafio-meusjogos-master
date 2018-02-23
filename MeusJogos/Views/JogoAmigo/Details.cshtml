@@ -1,0 +1,59 @@
+﻿@model MeusJogos.Models.JogoAmigoViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Jogo.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jogo.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amigo.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amigo.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataRetirada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataRetirada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDevolucao)
+        </dt>
+
+        @if (Model.DataDevolucao.HasValue)
+        {
+            <dd>
+                @Model.DataDevolucao.Value.ToShortDateString()
+            </dd>
+        }
+        else
+        {
+            <dd>
+                A devolver
+            </dd>
+        }
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { idAmigo = Model.IdAmigo, idJogo = Model.IdJogo }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

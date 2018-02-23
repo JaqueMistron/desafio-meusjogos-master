@@ -1,0 +1,62 @@
+﻿@model MeusJogos.Models.JogoAmigoViewModel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Excluir empréstimo</h2>
+
+<h3>Tem certeza que deseja excluir o empréstimo?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Jogo.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jogo.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amigo.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amigo.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataRetirada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataRetirada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDevolucao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataDevolucao)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(x => x.Amigo.IdAmigo)
+        @Html.HiddenFor(x => x.Jogo.IdJogo)
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-danger" />
+        </div>
+    }
+    <hr />
+    <div>
+        @Html.ActionLink("Voltar", "Index")
+    </div>
+</div>

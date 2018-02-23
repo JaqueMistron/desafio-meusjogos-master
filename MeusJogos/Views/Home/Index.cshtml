@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Olá!</h1>
+    <p class="lead"></p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <p>Aqui você pode cadastrar seus jogos, amigos e gerenciar seus empréstimos.</p>
+    }
+    else
+    {
+        <p>Faça o <a href="~/Acesso/Login">login</a> no site para gerenciar os seus jogos.</p>
+    }
+</div>

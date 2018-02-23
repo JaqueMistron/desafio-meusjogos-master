@@ -1,0 +1,74 @@
+﻿@model MeusJogos.Models.JogoViewModel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Excluir jogo</h2>
+
+<h3>Tem certeza que deseja excluir o jogo @Model.Titulo?</h3>
+<div>
+    <hr />
+    @if (Model.ListaJogosEmprestados.Any())
+    {
+        <div class="alert alert-danger">
+            <b>Atenção!</b> O jogo está emprestado para <a id="detalharJogoAmigo" class="alert-link" href="#">algum amigo.</a>
+        </div>
+    }
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Versao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Versao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataAquisicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataAquisicao)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-danger" />
+        </div>
+    }
+    <hr />
+    <div>
+        @Html.ActionLink("Voltar", "Index")
+    </div>
+</div>
+<div id="containerModal"></div>
+@section scripts{
+    <script type="text/javascript">
+        var app = app || {};
+        app.Urls = app.Urls || {};
+        app.Urls.urlBase = '@Url.Content("~")';
+        app.Urls.urlDetalharJogoAmigo = '@Url.Action("DetalharJogoAmigo", "Jogo")';
+
+        var modelJogo = {
+            IdJogo: '@Model.IdJogo'
+        };
+
+    </script>
+<script type="text/javascript" src="@Scripts.Url("~/Scripts/geral.js")"></script>
+    <script type="text/javascript" src="@Scripts.Url("~/Scripts/Jogo/jogo.js")"></script>
+}

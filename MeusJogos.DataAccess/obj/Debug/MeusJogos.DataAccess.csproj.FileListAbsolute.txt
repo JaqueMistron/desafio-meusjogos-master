@@ -1,0 +1,13 @@
+D:\Workspace\Git\MeusJogos\MeusJogos.DataAccess\bin\Debug\MeusJogos.DataAccess.dll.config
+D:\Workspace\Git\MeusJogos\MeusJogos.DataAccess\bin\Debug\MeusJogos.DataAccess.dll
+D:\Workspace\Git\MeusJogos\MeusJogos.DataAccess\bin\Debug\MeusJogos.DataAccess.pdb
+D:\Workspace\Git\MeusJogos\MeusJogos.DataAccess\bin\Debug\EntityFramework.dll
+D:\Workspace\Git\MeusJogos\MeusJogos.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\Workspace\Git\MeusJogos\MeusJogos.DataAccess\bin\Debug\MeusJogos.Domain.dll
+D:\Workspace\Git\MeusJogos\MeusJogos.DataAccess\bin\Debug\MeusJogos.Domain.pdb
+D:\Workspace\Git\MeusJogos\MeusJogos.DataAccess\bin\Debug\EntityFramework.xml
+D:\Workspace\Git\MeusJogos\MeusJogos.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\Workspace\Git\MeusJogos\MeusJogos.DataAccess\obj\Debug\MeusJogos.DataAccess.csprojResolveAssemblyReference.cache
+D:\Workspace\Git\MeusJogos\MeusJogos.DataAccess\obj\Debug\MeusJogos.DataAccess.csproj.CoreCompileInputs.cache
+D:\Workspace\Git\MeusJogos\MeusJogos.DataAccess\obj\Debug\MeusJogos.DataAccess.dll
+D:\Workspace\Git\MeusJogos\MeusJogos.DataAccess\obj\Debug\MeusJogos.DataAccess.pdb

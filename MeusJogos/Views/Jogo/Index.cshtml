@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MeusJogos.Models.JogoViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Jogos cadastrados</h2>
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>
+<table class="table table-striped table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Versao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataAquisicao)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Versao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAquisicao)
+            </td>
+            <td>
+                @Html.ActionLink("Detalhar", "Details", new { id = item.IdJogo }) |
+                @Html.ActionLink("Alterar", "Edit", new { id = item.IdJogo }) |
+                @Html.ActionLink("Excluir", "Delete", new { id = item.IdJogo })
+            </td>
+        </tr>
+    }
+</table>
