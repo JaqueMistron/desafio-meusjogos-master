@@ -18,7 +18,7 @@ O projeto foi implementado utilizando as seguintes tecnologias/recursos:
 - SQL Server 2014;
 - Visual Studio 2017
 - MVC 5 com razor;
-- Entity Framework 6 Model First;
+- Entity Framework 6;
 - AutoMapper;
 - Autofac
 - Jquery;
